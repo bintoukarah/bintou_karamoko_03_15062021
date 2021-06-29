@@ -1,0 +1,209 @@
+.exploration {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: 40px;
+  text-align: center;
+  background-color: #f6f6f6;
+}
+
+.howto {
+  background-color: #ffff;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    padding: 10px;
+  }
+  &__icon {
+    font-size: 20px;
+    color: #7a7979;
+    margin: 20px;
+  }
+
+  & p {
+    font-size: 18px;
+  }
+  &__steps {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    margin: 0px;
+  }
+  & li {
+    background-color: #f6f6f6;
+    padding: 0px;
+    border-radius: 20px;
+    padding-right: 35px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+  & li i {
+    width: 10%;
+  }
+  & li:hover {
+    background: lighten($colour-primary, 30%);
+    i {
+      color: $colour-primary;
+    }
+  }
+  & ol {
+    counter-reset: numberlist;
+  }
+  & ol li {
+    margin: 4px;
+    counter-increment: numberlist;
+    position: relative;
+    list-style: none;
+  }
+
+  & ol li::before {
+    content: counter(numberlist);
+    background: #9356dc;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+    top: 18px;
+    left: -10px;
+  }
+}
+
+.restaurants {
+  background-color: #f2f2f2;
+  padding-bottom: 10px;
+  &__title {
+    padding: 10px;
+  }
+}
+
+.card {
+  background-color: #fff;
+  border-radius: 15px;
+  margin: 20px;
+  width: auto;
+
+  &__img {
+    height: 205px;
+    width: 100%;
+    object-fit: cover;
+    border-top-left-radius: 15px;
+    border-top-right-radius: 15px;
+  }
+  &__footer {
+    display: flex;
+    align-items: center;
+  }
+
+  &__details {
+    width: 90%;
+  }
+
+  &__details h3,
+  p {
+    margin: 10px;
+  }
+
+  &__inscription {
+    position: absolute;
+    background-color: #99e2d0;
+    color: #1b6150;
+    padding: 9px;
+    border-radius: 5px;
+    bottom: -230px;
+    left: 255px;
+  }
+  &__inscription_2 {
+    position: absolute;
+    background-color: #99e2d0;
+    color: #1b6150;
+    padding: 9px;
+    border-radius: 5px;
+    bottom: -530px;
+    left: 255px;
+  }
+  &__details__new {
+    margin-top: 10px;
+    margin-left: 10px;
+    width: 87%;
+
+    p {
+      margin-top: -12px;
+      margin-left: 0px;
+    }
+    h3 {
+      margin-top: 0px;
+    }
+  }
+}
+
+
+
+.favorite-btn:hover i {
+  opacity: 0;
+}
+
+.favorite-btn:hover .on-hover {
+  opacity: 1;
+}
+
+
+
+@media screen and (min-width: 1000px) {
+  .howto {
+    &__steps {
+      flex-direction: initial;
+      justify-content: space-around;
+      margin: auto;
+      width: 90%;
+    }
+  }
+  .restaurants {
+    display: flex;
+    width: 100%;
+    justify-content: space-around;
+  }
+
+  .card {
+    width: 30%;
+    height: 300px;
+    &__inscription {
+      position: relative;
+      background-color: #99e2d0;
+      color: #1b6150;
+      padding: 9px;
+      border-radius: 5px;
+      bottom: 170px;
+      left: 70%;
+    }
+    &__inscription_2 {
+      position: relative;
+      background-color: #99e2d0;
+      color: #1b6150;
+      padding: 9px;
+      border-radius: 5px;
+      bottom: 168px;
+      left: 70%;
+    }
+    &__details__new {
+      margin-top: -27px;
+      margin-left: 10px;
+      width: 87%;
+      p {
+        margin-top: -12px;
+        margin-left: 0px;
+      }
+      h3 {
+        margin-top: 18px;
+      }
+    }
+  }
+}
