@@ -7,6 +7,75 @@
   background-color: #f6f6f6;
 }
 
+.howto {
+  background-color: #ffff;
+  display: flex;
+  flex-direction: column;
+
+  &__title {
+    padding: 10px;
+  }
+  &__icon {
+    font-size: 20px;
+    color: #7a7979;
+    margin: 20px;
+  }
+
+  & p {
+    font-size: 18px;
+  }
+  &__steps {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    text-align: center;
+    margin: 0px;
+  }
+  & li {
+    background-color: #f6f6f6;
+    padding: 0px;
+    border-radius: 20px;
+    padding-right: 35px;
+    margin-bottom: 20px;
+    font-weight: 400;
+    text-align: center;
+    display: flex;
+    align-items: center;
+  }
+  & li i {
+    width: 10%;
+  }
+  & li:hover {
+    background: lighten($colour-primary, 30%);
+    i {
+      color: $colour-primary;
+    }
+  }
+  & ol {
+    counter-reset: numberlist;
+  }
+  & ol li {
+    margin: 4px;
+    counter-increment: numberlist;
+    position: relative;
+    list-style: none;
+  }
+
+  & ol li::before {
+    content: counter(numberlist);
+    background: #9356dc;
+    height: 1.5rem;
+    width: 1.5rem;
+    border-radius: 100px;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: #fff;
+    position: absolute;
+    top: 18px;
+    left: -10px;
+  }
+}
 
 .restaurants {
   background-color: #f2f2f2;
@@ -75,6 +144,48 @@
     }
   }
 }
+.favorite-btn {
+  position: relative;
+  width: 24px;
+  height: 24px;
+  background-color: #9356dc;
+  background-image: -webkit-gradient(
+    linear,
+    left top,
+    left bottom,
+    from(#ff79da),
+    to(#9356dc)
+  );
+  background-image: linear-gradient(#ff79da, #9356dc);
+  cursor: pointer;
+  margin-top: 3px;
+}
+.favorite-btn i {
+  position: absolute;
+  top: 0;
+  left: 0;
+  padding: 1px;
+  font-size: 22px;
+  -webkit-transition: opacity 0.2s ease-in-out;
+  transition: opacity 0.2s ease-in-out;
+  color: #7e7e7e;
+  background-color: #ffff;
+}
+
+.favorite-btn:hover i {
+  opacity: 0;
+}
+
+.favorite-btn:hover .on-hover {
+  opacity: 1;
+}
+
+.favorite-btn .on-hover {
+  opacity: 1;
+  background-color: #fff;
+  mix-blend-mode: lighten;
+}
+
 @media screen and (min-width: 1000px) {
   .howto {
     &__steps {
