@@ -1,0 +1,118 @@
+/*loader home*/
+
+  .loader {
+    position: fixed;
+    height: 100%;
+    width: 100%;
+    left: 0;
+    top: 0;
+    background-color: rgba(255, 255, 255, 0.9);
+    animation: loader 0.04s;
+    animation-delay: 1.75s;
+    animation-fill-mode: both;
+    z-index: 1;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    &__points {
+      height: 1rem;
+      width: 1rem;
+      border-radius: 1rem;
+      animation: jump 2s;
+      &Container {
+        margin-left: 40px;
+        display: flex;
+        width: 5rem;
+        justify-content: space-between;
+      }
+      &--1 {
+        background-color: $colour-primary;
+      }
+      &--2 {
+        background-color: $colour-secondary;
+        animation-delay: 0.5s;
+      }
+      &--3 {
+        background-color: $colour-valid;
+        animation-delay: 1s;
+      }
+    }
+  }
+  @keyframes loader {
+    100% {
+      opacity: 0;
+      z-index: -10;
+    }
+  }
+  @keyframes jump {
+    0% {
+      transform: translateY(0);
+    }
+    25% {
+      transform: translateY(0.5rem);
+    }
+    75% {
+      transform: translateY(-0.5rem);
+    }
+    100% {
+      transform: translateY(0);
+    }
+  }
+  /*animations menu*/
+  @keyframes slideDown {
+    0% {
+      transform: translateY(200px);
+      opacity: 0;
+    }
+    100% {
+      transform: translateY(0px);
+      opacity: 1;
+    }
+  }
+  .menu__details:hover .menu__check {
+    margin-right: 0px;
+  }
+  .menu__details:hover .menu__check i {
+    -webkit-animation: rotate-center 0.6s ease-in-out both;
+    animation: rotate-center 0.6s ease-in-out both;
+  }
+  .menu__details:hover .menu__price {
+    padding-right: 10px;
+  }
+  .menu__details:hover .menu__details {
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+  
+  @keyframes fade-in-meal-card {
+    0% {
+      opacity: 0;
+      margin-top: 15px;
+    }
+    100% {
+      opacity: 1;
+      margin-top: 0;
+    }
+  }
+  
+  /* animation rotate-center*/
+  @-webkit-keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
+  @keyframes rotate-center {
+    0% {
+      -webkit-transform: rotate(0);
+      transform: rotate(0);
+    }
+    100% {
+      -webkit-transform: rotate(360deg);
+      transform: rotate(360deg);
+    }
+  }
