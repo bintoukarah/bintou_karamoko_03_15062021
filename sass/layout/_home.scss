@@ -110,6 +110,7 @@
   &__details h3,
   p {
     margin: 10px;
+    font-weight: 400;
   }
 
   &__inscription {
@@ -229,10 +230,11 @@
       p {
         margin-top: -12px;
         margin-left: 0px;
+        
       }
       h3 {
         margin-top: 18px;
-        font-weight: normal;
+        font-weight: 400;
       }
     }
   }
